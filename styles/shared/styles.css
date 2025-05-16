@@ -1,0 +1,105 @@
+
+
+.listings {
+    /* background-color: rgb(192, 57, 57); */
+}
+
+.listings__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    /* background-color: black; */
+    /* height: 500px; */
+    padding: 1rem;
+    gap: 1rem;
+    margin: auto;
+    max-width: 83%;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    /* gap: 1rem; */
+    flex-direction: column;
+    cursor: pointer;
+    height: 330px;
+    border-radius: 22px;
+    border: 2px solid rgb(228, 228, 228);
+    text-align: start;
+    padding: 0px;
+    /* background-color: white; */
+}
+
+.card h3 {
+    margin: 15px;
+    margin-top: 5px;
+    color: rgb(17, 17, 17);
+        width: 200px;
+    height: 3em;                   /* Adjust height based on line-height */
+    line-height: 1.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* margin-bottom: 5px; */
+    /* margin-left: 4px; */
+}
+
+.card p {
+    margin-left: 4px;
+    color: rgba(56, 56, 56, 0.932);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px;
+}
+
+.features {
+    display: flex;
+    gap: 2rem;
+    margin-left: 15px;
+}
+
+.beds {
+    /* margin-left: 5px; */
+    color: rgb(110, 110, 110);
+    width: 40px;
+    /* border-right: 1px solid black; */
+    padding-right: 15px;
+    /* margin: 15px; */
+} 
+
+
+.main_listing_img {
+  width: 100%;
+  height: 62%;
+  object-fit: cover;
+  border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+
+/*header*/
+.h {
+  width: 83%;
+  height: 600px;
+  background: #847f7f;
+  margin: auto;
+    margin-top: auto;
+  border-radius: 50px;
+  margin-top: 17.7px;
+margin-bottom: 100px;
+
+}
+
+.h img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center;
+}
+
+.listings h3 {
+    margin-left: 9%;
+}

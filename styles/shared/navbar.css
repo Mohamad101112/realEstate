@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+
+body{
+    background-color: #f5f5f5;
+
+}
+
+.navbar {
+    /* display: flex; */
+  /* height: 59.3px; */
+  /* width: 100%; */
+  background:  #f5f5f5;
+  border-bottom: 2px solid rgb(223, 223, 223);
+  color: black;
+  display: flex;
+  padding: 20px 10%;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #e4e4e4;
+}

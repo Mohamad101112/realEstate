@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'saudi_riyal';
+  src: url('../../saudi-riyal.ttf') format('truetype');
+}
+
+.sar {
+    font-family: "saudi_riyal";
+    font-size: 20px;
+}
