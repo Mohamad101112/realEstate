@@ -3,6 +3,19 @@ import { listings } from "../data/listings.js";
 const url = new URL(window.location.href);
 const id = url.searchParams.get("id");
 
+let lang = 'en';
+ lang = url.searchParams.get('lang');
+
+if (lang === 'ar') {
+  document.documentElement.setAttribute('dir', 'rtl');
+//   document.documentElement.setAttribute('lang', 'ar');
+} else {
+  document.documentElement.setAttribute('dir', 'ltr');
+//   document.documentElement.setAttribute('lang', 'en');lll
+}
+if(lang === "ar"){
+    console.log('arabic');
+}
 
 /*find correct listing*/ 
 let listing = listings.find((e)=>{
@@ -21,7 +34,7 @@ let html = ``;
      })
 modalImages.innerHTML = html;
 
-
+/*listing images*/
 console.log(listing);
 const title = document.querySelector('.images');
 title.innerHTML =   `<img src="${listing.images[0]}" class="property_image_main property__image__outer">
@@ -29,6 +42,20 @@ title.innerHTML =   `<img src="${listing.images[0]}" class="property_image_main 
 <img src="${listing.images[2]}" class="property_image property__image__outer">
 <img src="${listing.images[3]}" class="property_image property__image__outer">`;
 
+/*content*/
+const description = document.querySelector('.description');
+description.innerHTML = `<h3><span class="sar">&#xE900;</span>${listing.price}</h3>
+            <h4 >Al salamah,north jeddah,jeddah</h4>
+            <div class="features">
+                <span class="beds">${listing.features.bedrooms} <i class="fa-solid fa-bed"></i></span>
+                <span class="beds">${listing.features.bathrooms} <i class="fa-solid fa-shower"></i></span>
+            </div>
+            <h4>Luxury apartment for sale</h4>
+            <span>
+            ${lang === 'ar' ? listing.description.ar:listing.description.en}
+            </span>`;
+
+/*company card */
 const companycard = document.querySelector('.company');
 companycard.innerHTML = `<a href="/${listing.company}">${listing.company}</a>`;
 
