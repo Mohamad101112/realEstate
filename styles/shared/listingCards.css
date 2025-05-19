@@ -12,7 +12,7 @@
     padding: 1rem;
     gap: 1rem;
     margin: auto;
-    max-width: 83%;
+    max-width: 70%;
     text-align: center;
 }
 
@@ -21,16 +21,17 @@
     /* gap: 1rem; */
     flex-direction: column;
     cursor: pointer;
-    height: 330px;
+    height: 356.3px;
     border-radius: 22px;
     border: 2px solid rgb(228, 228, 228);
     text-align: start;
     padding: 0px;
     /* background-color: white; */
+    /* max-width: 300px; */
 }
 
 .card h3 {
-    margin-left: 15px;
+    margin-inline-start: 15px;
     margin-top: 5px;
     color: rgb(17, 17, 17);
         width: 200px;
@@ -56,6 +57,7 @@
     display: flex;
     gap: 2rem;
     margin-left: 15px;
+    margin-top: 11px;
 }
 
 .beds {
@@ -81,7 +83,7 @@
 
 /*header*/
 .h {
-  width: 83%;
+  width: 70%;
   height: 600px;
   background: #847f7f;
   margin: auto;
@@ -102,5 +104,9 @@ margin-bottom: 100px;
 }
 
 .listings h3 {
-    margin-inline-start: 9%;
+    margin-inline-start: 15.2%;
+}
+
+.card h3 {
+    margin-inline-start: 4.9%;
 }

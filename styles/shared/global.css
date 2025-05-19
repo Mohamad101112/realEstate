@@ -3,7 +3,34 @@
   src: url('../../saudi-riyal.ttf') format('truetype');
 }
 
+
+html[lang="ar"] {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 500;
+}
+
+html[lang="en"] {
+ font-family: sans-serif;
+ font-weight: 500;
+}
+
+
 .sar {
     font-family: "saudi_riyal";
     font-size: 20px;
+}
+
+.button--primary {
+  background-color: #d9d9d9;
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #000000e1;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 5px;
+  text-decoration: none;
+  text-align: center;
+
 }

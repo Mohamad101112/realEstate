@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
 }
 
 
@@ -9,6 +8,16 @@
 body{
     background-color: #f5f5f5;
 
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
+  padding: 1rem;
+  align-items: center;
 }
 
 .navbar {
@@ -19,23 +28,41 @@ body{
   border-bottom: 2px solid rgb(223, 223, 223);
   color: black;
   display: flex;
-  padding: 20px 10%;
   justify-content: space-between;
   align-content: center;
   align-items: center;
 
 }
 
+.logo {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .links {
     display: flex;
     gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang__toggle {
+    background-color: rgb(113, 113, 113);
+    padding: 5px 25px !important;
+    color: white !important;
+    border-radius: 25px;
 }
 
 .links a {
     color: black;
     text-decoration: none;
+    font-family: sans-serif;
+    font-size: 20px;
 }
 
 .links a:hover {
-    color: #e4e4e4;
+    color: #0000009a;
 }
