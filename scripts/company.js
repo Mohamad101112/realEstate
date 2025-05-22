@@ -1,5 +1,6 @@
 import { companies } from "../data/companies.js";
 import { listings } from "../data/listings.js";
+import { applyfilters, generateFilters } from "./filter.js";
 import { GenerateListingCard } from "./listingcards.js";
 import { GenerateNavbar, GenerateNavbarForCompanies } from "./navbar.js";
 
@@ -33,7 +34,25 @@ function langIsRtl(){
 langIsRtl();
 
 GenerateNavbarForCompanies(lang,window.location.pathname,company);
-const listingsCounter = GenerateListingCard(lang,company);
+
+generateFilters(lang);
+
+const listingsCounter = applyfilters(lang,company);
+
+/*event listeners for filters */
+document.getElementById('typeFilter').addEventListener('change',()=>{
+  applyfilters(lang,company);
+});
+
+document.getElementById('cityFilter').addEventListener('change',()=>{
+  applyfilters(lang,company);
+});
+
+document.getElementById('maxPriceFilter').addEventListener('change',() => {
+  applyfilters(lang,company);
+  
+});
+
 GenerateCompanyHeader();
 
 function GenerateCompanyHeader() {
@@ -62,3 +81,7 @@ html = `
 company.innerHTML = html;
 
 }
+
+const title = document.querySelector('.properties__title');
+title.innerHTML = `${lang === 'ar' ? `جميع العقارات`:`All properties`}`;
+console.log(title.innerHTML);

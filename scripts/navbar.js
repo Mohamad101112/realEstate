@@ -32,13 +32,19 @@ export function GenerateNavbarForCompanies(lang,url,company) {
     const navbar = document.querySelector('.navbar');
     navbar.innerHTML =  `
     <div class="nav">
-    <h3>LOGO</h3>  
+    <a class="logo" href="${lang === 'ar' ? `index.html?lang=ar`:`index.html`}">HOME|FINDER</a> 
   <div class="links">
-  <a href="#">Home</a>
-  <a href="#">for sale</a>
-  <a href="#">for rent</a>
-  <a href="#">contact us</a>
-  <a href="${url}${lang !== 'ar' ? `?lang=ar&company=${company}`:`?company=${company}` }">${lang === 'ar' ? 'En':'Ar'}</a>  </div>
+
+    <a href="${lang === 'ar' ? `index.html?lang=ar`:`index.html`}">
+  ${lang === 'ar' ? `الصفحة الرئيسية`: `Home`}</a>
+
+  <a href="#">${lang === 'ar' ? `للبيع`: `For sale`}</a>
+  
+  <a href="#">${lang === 'ar' ? `للايجار`: `For rent`}</a>
+  
+  <a href="#">${lang === 'ar' ? `تواصل معنا`: `contact us`}</a>
+
+  <a class="lang__toggle" href="${url}${lang !== 'ar' ? `?lang=ar&company=${company}`:`?company=${company}` }">${lang === 'ar' ? 'En':'Ar'}</a>  </div>
     </div>
     </div>
     `;

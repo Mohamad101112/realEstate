@@ -1,4 +1,5 @@
 import { listings } from "../data/listings.js";
+import { applyfilters, generateFilters } from "./filter.js";
 import { GenerateListingCard } from "./listingcards.js";
 import { GenerateNavbar } from "./navbar.js";
 
@@ -25,9 +26,32 @@ GenerateNavbar(lang,window.location.pathname);
 
 
 /* */
-GenerateListingCard(lang);
+generateFilters(lang);
+GenerateListingCard(lang,listings);
+applyfilters(lang);
+
+
+
+
+
+
+/*event listeners for filters */
+document.getElementById('typeFilter').addEventListener('change',()=>{
+  applyfilters(lang);
+});
+
+document.getElementById('cityFilter').addEventListener('change',()=>{
+  applyfilters(lang);
+});
+
+document.getElementById('maxPriceFilter').addEventListener('change',() => {
+  applyfilters(lang);
+  
+});
+
 
 /*properties title */
 
 const title = document.querySelector('.properties__title');
-title.innerHTML = `${lang === 'ar' ? `جميع العقارات`:`All properties`}`
+title.innerHTML = `${lang === 'ar' ? `جميع العقارات`:`All properties`}`;
+console.log(title.innerHTML);
