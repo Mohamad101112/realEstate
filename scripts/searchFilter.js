@@ -16,7 +16,7 @@ listings.forEach((e) => {
         if(categoryFilter === 'all' ||categoryFilter === e.category){
             if(maxPrice === '' || Number(e.price) <= Number(maxPrice)){
                 if(cityFilter === 'all' || cityFilter === e.city){
-                   if(maxPrice === 'all' || e.price <= maxPrice){
+                   if(maxPrice === '' || e.price <= maxPrice){
                        console.log('filteredListings')
                        filteredListings.push(e);
                    }
