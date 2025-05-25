@@ -1,0 +1,99 @@
+/*header*/
+.h {
+  /* width: 70%; */
+  height: 600px;
+  margin: auto;
+    /* margin-top: auto; */
+  border-radius: 12px;
+  /* margin-top: 17.7px; */
+margin-bottom: 100px;
+max-width: 1200px;
+padding: 1rem;
+position: relative;
+}
+
+.h img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center;
+    opacity: 80%;
+}
+
+
+.search {
+  position: absolute;
+
+
+   /* background: white; */
+  z-index: 1;
+  /* width: 100%; */
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchbox {
+
+  background: #eaeaea;
+  width: 65%;
+  height: 180px;
+  border-radius: 15px;
+}
+
+
+.typeSelected {
+  display: flex;
+  /*! justify-content: space-between; */
+  /* padding: 15px 0; */
+}
+
+.search__type {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding:15px ;
+  cursor: pointer;
+}
+
+.search__type__selected {
+  border-bottom: 2px solid #15b99a;
+  color: #15b99a;
+}
+
+
+.search__filters {
+  /*! height: max-content; */
+  display: flex;
+  align-items: center;
+  /* justify-content: ; */
+  margin-top: 15.6px;
+  margin-left: 5px;
+  padding: 25px;
+  gap: 5px;
+}
+
+
+.filtersHome {
+  padding: 11.3px;
+  font-size: 18px;
+  color: #3c3c3c;
+  border: 1px solid #343434;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+.search__action {
+  padding: 12.8px;
+  border: none;
+  background: #15b99a;
+  font-size: 18pz;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { listings } from "../data/listings.js";
 import { GenerateListingCard } from "./listingcards.js";
 
 
+
 export function applyfilters(lang,company = '') {
 
 const typeFilter = document.getElementById('typeFilter').value;
@@ -37,6 +38,9 @@ return GenerateListingCard(lang,filteredListings);
 
 }
 
+
+
+
 export function generateFilters(lang) {
 const filters = document.querySelector('.filtersContainer');
 filters.innerHTML = `
@@ -61,4 +65,24 @@ filters.innerHTML = `
           <option value="700000">${lang === 'ar' ? `أقصى سعر: 700,000`:`Max price: 700,000`}</option>
         </select>
 `;
+}
+
+
+export function generateSearchLinkAndSearch(lang,selection) {
+
+  const typeFilterElem = document.getElementById('typeFilterHome').value;
+  const cityFilterElem = document.getElementById('cityFilterHome').value;
+  const maxPriceElem = document.getElementById('maxPriceFilterHome').value;
+
+
+  let url =  `search.html?`;
+
+  if (lang === 'ar'){
+    url += `lang=ar&`;
+  }
+
+  url += `city=${cityFilterElem}&category=${typeFilterElem}&type=${selection}&maxprice=${maxPriceElem}`;
+  console.log(url);
+
+return url;
 }

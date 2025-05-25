@@ -80,27 +80,7 @@
 
 
 
-/*header*/
-.h {
-  /* width: 70%; */
-  height: 600px;
-  margin: auto;
-    /* margin-top: auto; */
-  border-radius: 12px;
-  /* margin-top: 17.7px; */
-margin-bottom: 100px;
-max-width: 1200px;
-padding: 1rem;
-}
 
-.h img {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    object-fit: cover;
-    object-position: center;
-    opacity: 80%;
-}
  /**/
 .listings h3 {
     /* margin-inline-start: 15.2%; */
