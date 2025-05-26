@@ -50,7 +50,30 @@ export function GenerateNavbarForCompanies(lang,url,company) {
     `;
 }
 
+export function GenerateNavbarForSearch(lang,city,category,type,maxPrice){
+  const navbar = document.querySelector('.navbar');
+    navbar.innerHTML =  `
+    <div class="nav">
+    <a class="logo" href="${lang === 'ar' ? `index.html?lang=ar`:`index.html`}">HOME|FINDER</a>
 
+
+  <div class="links">
+
+  <a href="${lang === 'ar' ? `index.html?lang=ar`:`index.html`}">
+  ${lang === 'ar' ? `الصفحة الرئيسية`: `Home`}</a>
+
+  <a href="#">${lang === 'ar' ? `للبيع`: `For sale`}</a>
+  
+  <a href="#">${lang === 'ar' ? `للايجار`: `For rent`}</a>
+  
+  <a href="#">${lang === 'ar' ? `تواصل معنا`: `contact us`}</a>
+  
+  <a class="lang__toggle" href="${lang === 'ar' ? `search.html?city=${city}&category=${category}&type=${type}&maxprice=${maxPrice}`:`search.html?lang=ar&city=${city}&category=${category}&type=${type}&maxprice=${maxPrice}`}">
+     ${lang === 'ar' ? 'En':'Ar'}</a>
+  </div>
+  </div>
+    `;
+}
 /*if on homepage theres no id to be added to the url 
 else add the id after the language in the url
 

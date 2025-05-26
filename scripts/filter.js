@@ -5,6 +5,7 @@ import { GenerateListingCard } from "./listingcards.js";
 
 export function applyfilters(lang,company = '') {
 
+const categoryFilter = document.getElementById('categoryFilter').value;
 const typeFilter = document.getElementById('typeFilter').value;
 const cityFilter = document.getElementById('cityFilter').value;
 const maxPrice = document.getElementById('maxPriceFilter').value;
@@ -14,13 +15,15 @@ let filteredListings = [];
 
 listings.forEach((e) => {
 
-    if(typeFilter === 'all' || typeFilter === e.category){
+    if(typeFilter === 'all' || typeFilter === e.type){
+      if(categoryFilter === 'all' || categoryFilter === e.category){
             if(maxPrice === "" || Number(e.price) <= Number(maxPrice)){
                 if(cityFilter === 'all' || cityFilter === e.city){
                     if(company === '' || company === e.company){
                         filteredListings.push(e);
                     }
                 }
+              }
         }
     }
 
@@ -35,7 +38,6 @@ if ( document.querySelector('.listingsCounter')){
 }
 /*this returns the listingscount */
 return GenerateListingCard(lang,filteredListings);
-
 }
 
 
@@ -44,10 +46,17 @@ return GenerateListingCard(lang,filteredListings);
 export function generateFilters(lang) {
 const filters = document.querySelector('.filtersContainer');
 filters.innerHTML = `
-        <select class="filters" id="typeFilter">
+        <select class="filters" id="categoryFilter">
           <option value="all">${lang === 'ar' ? `جميع الانواع`:`All Types`}</option>
           <option value="flat">${lang === 'ar' ? `شقة`:`Apartment`}</option>
           <option value="villa">${lang === 'ar'? `فيلا`:`Villa`}</option>
+          <option value="furnished">${lang === 'ar'? `مفروش`:`furnished`}</option>
+        </select>
+
+          <select class="filters" id="typeFilter">
+          <option value="all">${lang === 'ar' ? `للايجار و البيع`:`rent and sale`}</option>
+          <option value="rent">${lang === 'ar' ? `للايجار`:`rent`}</option>
+          <option value="sale">${lang === 'ar'? `للبيع`:`sale`}</option>
         </select>
 
           <select class="filters" id="cityFilter">

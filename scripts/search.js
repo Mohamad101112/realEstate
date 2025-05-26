@@ -1,5 +1,6 @@
 import { listings } from "../data/listings.js";
-import { GenerateNavbar } from "./navbar.js";
+import { applyfilters, generateFilters } from "./filter.js";
+import { GenerateNavbar, GenerateNavbarForSearch } from "./navbar.js";
 import { applyFiltersSearch } from "./searchFilter.js";
 
 const url = new URL(window.location.href);
@@ -24,6 +25,27 @@ langIsRtl();
 
 
 
-GenerateNavbar(lang,window.location.pathname)
+
+generateFilters(lang);
 
 applyFiltersSearch(lang,city,category,type,maxPrice);
+
+GenerateNavbarForSearch(lang,city,category,type,maxPrice);
+
+// document.getElementById('typeFilter').ariaValueMax = type;
+
+document.getElementById('typeFilter').addEventListener('change',()=>{
+  applyfilters(lang);
+});
+
+document.getElementById('cityFilter').addEventListener('change',()=>{
+  applyfilters(lang);
+});
+
+document.getElementById('maxPriceFilter').addEventListener('change',() => {
+  applyfilters(lang);
+});
+
+document.getElementById('categoryFilter').addEventListener('change',() => {
+  applyfilters(lang);
+});

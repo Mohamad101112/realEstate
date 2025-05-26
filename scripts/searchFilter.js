@@ -1,11 +1,8 @@
 import { listings } from "../data/listings.js";
 import { GenerateListingCard } from "./listingcards.js";
 
- 
 
-
-
-export function applyFiltersSearch(lang,cityFilter = 'all',categoryFilter = 'all',typeFilter = 'all',maxPrice = '') {
+export function applyFiltersSearch(lang,cityFilter,categoryFilter,typeFilter ,maxPrice = '') {
 console.log(cityFilter);
 
 let filteredListings = [];
@@ -27,14 +24,20 @@ listings.forEach((e) => {
 
 })
 
-let listingsCounter = GenerateListingCard(lang,filteredListings);
-console.log(listingsCounter);
+/*this returns the listingscount */
+// let listingsCounter = GenerateListingCard(lang,filteredListings);
+// console.log(listingsCounter);
+let counter = 0;
+filteredListings.forEach((e)=>{
+counter++;
+})
 
 if ( document.querySelector('.listingsCounter')){
     const listingsCounterElem =  document.querySelector('.listingsCounter');
-    listingsCounterElem.innerHTML = `<h4>${lang === 'ar' ? `العقارات: `:`listings:`} ${listingsCounter}<h4>`;
+    listingsCounterElem.innerHTML = `<h4>${lang === 'ar' ? `العقارات: `:`listings:`} ${counter}<h4>`;
 }
-/*this returns the listingscount */
-return GenerateListingCard(lang,filteredListings);
+
+GenerateListingCard(lang,filteredListings);
+return counter;
 
 }
